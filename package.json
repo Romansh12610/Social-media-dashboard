@@ -1,0 +1,36 @@
+{
+  "name": "fem-social-media-dashboard",
+  "version": "1.0.0",
+  "description": "This code is from my [YouTube video series](https://www.youtube.com/watch?v=iL4irerdGdU&list=PLUWqFDiirlsu5az5EIyxe8ZddyNO_kDuP) building a social media dashboard with dark/light toggle.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "preinstall": "npx npm-force-resolutions"
+  },
+  "resolutions": {
+    "glob-parent": "^6.0.1",
+    "chokidar": "^3.5.3",
+    "glob-watcher": "^6.0.0",
+    "vinyl-fs": "4.0.0"
+  },
+  "keywords": [],
+  "author": "RomanSh",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.22.20",
+    "@babel/preset-env": "^7.22.20",
+    "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
+    "chokidar": "^3.5.3",
+    "cssnano": "^6.0.1",
+    "glob-parent": "^6.0.2",
+    "glob-watcher": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "postcss": "^8.4.30",
+    "sass": "^1.68.0"
+  }
+}
