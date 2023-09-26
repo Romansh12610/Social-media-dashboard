@@ -2,13 +2,17 @@
 
 .toggle {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr auto 1fr;
     grid-template-rows: repeat(2, max-content);
     align-items: center;
-    gap: rem(12);
+    gap: rem(4.5) rem(8);
     border: none;
+    margin: 0;
 
     label {
+        font-size: rem(14);
+        cursor: pointer;
+
         &[for='dark'] {
             grid-column: 1 / 2;
             justify-self: end;
@@ -27,16 +31,21 @@
 
     &__wrapper {
         height: rem(24);
+        width: rem(48);
         grid-column: 2 / 3;
         grid-row: 1 / 2;
         cursor: pointer;
-
         position: relative;
+
+        display: flex;
+        justify-content: center;
     }
 
     input[type="radio"] { 
         opacity: 0;
-        margin: 0;  
+        margin: 0 -2px;
+        width: rem(20);
+        height: rem(24);  
     }
 
     &__background {
@@ -64,6 +73,10 @@
         border-radius: 50%;
         background-color: var(--dark-bg);
 
-        transition: 700ms all;
+        transition: 200ms all ease-in-out;
+
+        &:focus {
+            outline: 2px solid var(--toggle-button-light);
+        }
     }
 }

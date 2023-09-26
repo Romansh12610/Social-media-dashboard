@@ -2,11 +2,21 @@
 
 .header {
     margin-top: rem(36);
+    display: flex;
 
     @include breakpoint(medium) {
-        display: flex;
+        flex-flow: row nowrap;
         justify-content: space-between;
         align-items: center;
+    }
+
+    @include breakpoint-down(small) {
+        flex-flow: column wrap;
+        gap: rem(20);
+
+        &__toggle {
+            align-self: center;
+        }
     }
 
     &__title {
@@ -16,9 +26,5 @@
         font-size: rem(14);
         font-weight: 700;
         color: var(--dark-text1);
-    }
-
-    &__toggle{
-
     }
 }
