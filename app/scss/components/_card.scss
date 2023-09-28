@@ -1,5 +1,81 @@
 @use '../util/' as *;
 
 .card {
-    padding: rem(20);
+    background-color: var(--dark-card);
+    color: var(--dark-text1);
+    width: rem(255);
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: center;
+
+    &--facebook{
+        border-top: rem(5) solid var(--facebook);
+    }
+
+    &--twitter{
+        border-top: rem(5) solid var(--twitter);
+    }
+
+    &--instagram{
+        border-top-width: rem(5);
+        border-top-style: solid;
+        border-image: linear-gradient(to right, var(--instagram-start), var(--instagram-middle), var(--instagram-end)) 1;
+    }
+
+    &--youtube{
+        border-top: rem(5) solid var(--youtube);
+    }
+
+    &__platform {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: rem(10);
+        padding: rem(20) 0 rem(15) 0;
+    }
+
+    &__username {
+        font-size: 0.8rem;
+    }
+
+    &__count {
+        font-size: 3.5rem;
+        font-weight: bold;
+        color: var(--light-card);
+    }
+
+    &__label{
+        font-size: 0.8rem;
+        font-weight: 300;
+        color: var(--dark-text1);
+        letter-spacing: rem(5);
+    }
+
+    &__change {
+        font-size: 0.8rem;
+        padding: rem(20) 0 rem(20) 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: rem(5);
+
+        &--increase {
+            color: var(--limegreen);
+        };
+
+        &--decrease {
+            color: var(--brightred);
+        }
+    }
+};
+
+
+.h2 {
+    display: block;
+    margin: 0 auto;
+}
+
+.short-card {
+
 }

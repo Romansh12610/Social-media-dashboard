@@ -12,25 +12,29 @@ function toggleTheme(event) {
     if (event.target.tagName == 'INPUT') return;
     //changing checked radio btn
     let checkedBtn = document.querySelector('input[checked]');
+    let newCheckedBtn;
 
-    if (checkedBtn.id === 'dark') {
-        checkedBtn.removeAttribute('checked');
-        let newCheckedBtn = document.getElementById('system');
-        newCheckedBtn.setAttribute('checked', '');
+    switch(checkedBtn.id) {
+        case 'dark':
+            checkedBtn.removeAttribute('checked');
+            newCheckedBtn = document.getElementById('system');
+            newCheckedBtn.setAttribute('checked', '');
+            moveToCenter(btnBg, btn, shiftX);
+            break;
 
-        moveToCenter(btnBg, btn, shiftX);
-    } else if (checkedBtn.id === 'system') {
-        checkedBtn.removeAttribute('checked');
-        let newCheckedBtn = document.getElementById('light');
-        newCheckedBtn.setAttribute('checked', '');
+        case 'system':
+            checkedBtn.removeAttribute('checked');
+            newCheckedBtn = document.getElementById('light');
+            newCheckedBtn.setAttribute('checked', '');
+            moveToRight(btnBg, btn, shiftX);
+            break;
 
-        moveToRight(btnBg, btn, shiftX);
-    } else if (checkedBtn.id === 'light') {
-        checkedBtn.removeAttribute('checked');
-        let newCheckedBtn = document.getElementById('dark');
-        newCheckedBtn.setAttribute('checked', '');
-
-        moveToLeft(btn);
+        case 'light':
+            checkedBtn.removeAttribute('checked');
+            newCheckedBtn = document.getElementById('dark');
+            newCheckedBtn.setAttribute('checked', '');
+            moveToLeft(btn);
+            break;
     }
 }
 
@@ -44,7 +48,8 @@ function onLabelClick(event) {
     if (!target || !fieldset.contains(target)) return;
 
     let nextId = target.getAttribute('for');
-    document.getElementById(nextId).setAttribute('checked', '');
+    let targetInput = document.getElementById(nextId);
+    if (!targetInput.checked) targetInput.setAttribute('checked', '');
 
     if (nextId == 'dark') {
         moveToLeft(btn); 
@@ -64,8 +69,7 @@ function moveToCenter(bg, el, shiftX) {
 }
 
 function moveToRight(bg, el, shiftX) {
-    let leftEdge;
-    leftEdge = bg.offsetWidth - el.offsetWidth - shiftX * 2;
+    let leftEdge = bg.offsetWidth - el.offsetWidth - shiftX * 2;
     el.style.transform = `translate(${leftEdge}px)`;
 }
 
